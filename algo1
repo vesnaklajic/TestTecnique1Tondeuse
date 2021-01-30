@@ -1,0 +1,69 @@
+
+
+//saisire le mesure de pelouse, associer avec FX et FY
+chaine mesure; 
+lire(mesure)
+FX=mesure[1]
+FY=mesure[2]
+
+//saisire le position de, associer avec x,y,O
+chaine position 
+lire(position)
+x=position[1]
+y=position[2]
+o=position[4]
+
+//saisire le command string 
+chaine command 
+
+WHILE check() do { 
+FOR (int i=0, i<command.LENGHT, i++{
+lettre=command[i];
+MOVE(lettre);
+}END FOR
+}END WHILE
+
+
+FUNCTION MOVE(lettre){
+
+IF (lettre=G){
+SWITCH (o){
+case o=S: o=W; break;
+case o=W: o=N; break;
+case o=N: o=E; break;
+case o=E: o=S; break;
+}ENDSWITCH
+}ENDIF
+
+if (lettre=D){
+SWITCH (o){
+case o=S: o=E; break;
+case o=W: o=S; break;
+case o=N: o=W; break;
+case o=E: o=N; break;
+}ENDSWITCH
+}ENDIF
+
+
+IF (lettre=A){
+SWITCH (o){
+case o=S: y=y-1; break;
+case o=W: x=x+1; break;
+case o=N: y=y+1; break;
+case o=E: x=x+1; break;
+}ENDSWITCH
+}ENDIF
+}END FUNCTION 
+
+
+//tondeuse est sorti ou pas 
+FUNCTION boolean CHECK(x,y)  {
+if x>0 && x<FX
+endif y>0 && y<FY;
+}END FUNCTION CHECK 
+
+
+
+
+
+
